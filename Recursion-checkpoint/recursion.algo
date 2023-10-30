@@ -1,0 +1,23 @@
+FUNCTION isPalindrome(word: STRING) : BOOLEAN
+VAR
+    testString: STRING = ""
+BEGIN
+    // Define pointers for the start and end of the word
+    i := 0
+    j := LENGTH(word) - 1
+    
+    WHILE (i < j) DO
+        // Compare characters at the start and end
+        IF (word[i] != word[j]) THEN
+            // If characters are different, it's not a palindrome
+            RETURN FALSE
+        END_IF
+        
+        // Move pointers towards the center of the word
+        i := i + 1
+        j := j - 1
+    END_WHILE
+    
+    // If the loop completes without finding a difference, it's a palindrome
+    RETURN TRUE
+END
